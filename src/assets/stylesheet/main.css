@@ -656,6 +656,15 @@ blockquote {
     background-color: #FEFEFE
 }
 
+.bg-lightyellow {
+    background: #fffff0
+}
+
+.bg-lightgray {
+    background: #EFEFEF;
+    border-radius: 3px;
+}
+
 .white {
     color: #FFFFF0
 }
@@ -1008,4 +1017,23 @@ a:hover {
 
 .blog-archive {
     font-size: 18px
+}
+
+.footer-description {
+    margin-left: 75px;
+    max-width: 400px
+}
+
+.headline-404 {
+    font-size: 6rem;
+    width: 240px;
+    margin-top: 0
+}
+
+.width-100pc {
+    width: 100%
+}
+
+.width-100pc {
+    width: 70%
 }

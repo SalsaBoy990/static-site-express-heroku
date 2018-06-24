@@ -4,7 +4,7 @@
     <div class="col-xs-12 col-sm-8">
       <% for (var i = 0; i < postsDataForIndexPage.length; i++) { %>
       <article>
-        <div class="plhalf prhalf pthalf m0 mb3 border-full border-shadow clearfix" style="background: #fffff0;">
+        <div class="plhalf prhalf pthalf m0 mb3 border-full border-shadow clearfix bg-lightyellow">
           <a href="<%= postsDataForIndexPage[i].pathToPost %>" class="big mbhalf bold-800 pt-sans m0"><%= postsDataForIndexPage[i].title %></a>
           <hr>
           <p class="minimal gray mb0"><span class="glyphicon glyphicon-time"></span> <%= postsDataForIndexPage[i].dateFormatted %></p>
@@ -21,7 +21,7 @@
     </div>
     
     <div class="col-xs-12 col-sm-4">
-      <div class="mb2 pb1" style="background: #EFEFEF; border-radius: 3px;">
+      <div class="mb2 pb1 bg-lightgray">
         <h4 class="mt0 pthalf mb1 plhalf gray blog-archive">Blog archive</h4>
         <% for (var i = 0; i < blogArchive.length; i++) { %>
         <h5 class="mt0 mbhalf pl1 dark-gray blog-archive">

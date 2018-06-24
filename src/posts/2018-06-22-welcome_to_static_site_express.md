@@ -7,26 +7,32 @@ comments: false
 topic: null
 ---
 
-static-site-express is a simple Node.js based static site generator that uses EJS and Markdown.
+static-site-express is a simple Node.js based static-site generator (SSG) that uses EJS and Markdown. You can deploy your static site/blog to Netlify, or to Heroku.
 
-
-## Usage Manual
+## Manual
 
 ### 1. Installation
 
 
 `npm install static-site-express`
 
+Or clone my repository:
+
+`git clone https://github.com/SalsaBoy990/static-site-express your-folder`
+
 
 ### 2. Generate website into `./public` folder
 
-Build website only (without serving it on localhost):
+Build website: 
 
 `npm run build`
 
-Build website, watch changes (fs changes in `./src` folder trigger re-build) and serve it at `localhost:4000`:
+Serve website on `localhost:4000`:
 
-`npm run build-watch`
+`npm run serve`
+
+Or you can watch for changes and trigger re-build with nodemon:
+`npm run watch`
 
 Inspect `site.config.js` first. You can change the site properties (title, author, description, social media links etc.) that are used in the EJS partials. The site generator will insert your values into the right place.
 
@@ -43,7 +49,7 @@ Publish directory is: `public`
 
 The `netlify.toml` configuration file already contains these two settings. You can publish your site in a minute.
 
-### +1. You can even publish the website on Heroku!
+### 4. You can use the Express server app on Heroku too
 
 A `Procfile` already supplied for you with the command  to execute the app server by the dynos:
 
@@ -69,9 +75,13 @@ const csp = require('helmet-csp')
 app.use(csp({
   directives: {
     defaultSrc: [`'self'`],
-    styleSrc: [`'self'`, 'https://fonts.googleapis.com', 'https://www.youtube.com'],
+    styleSrc: [`'self'`, 'https://fonts.googleapis.com', 'https://www.youtube.com',
+    'https://maxcdn.bootstrapcdn.com'],
     fontSrc: [`'self'`, 'https://fonts.gstatic.com/'],
-    scriptSrc: [`'self'`, 'https://www.youtube.com','https://www.googletagmanager.com', 'https://www.google-analytics.com'],
+    scriptSrc: [`'self'`, 'https://www.youtube.com','https://www.googletagmanager.com', 'https://www.google-analytics.com',
+    'https://code.jquery.com',
+    'https://maxcdn.bootstrapcdn.com'
+    ],
     childSrc: [`'self'`, 'https://www.youtube.com'],
     imgSrc: [`'self'`, 'www.google-analytics.com'],
     objectSrc: [`'self'`],
@@ -79,9 +89,6 @@ app.use(csp({
   }
 }))
 ````
-
-You have to build the site in the `public/` folder first. Change the `.gitignore` rules too!
-
 
 ## The idea of making a static site generator came from this article:
 
