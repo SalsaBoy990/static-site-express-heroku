@@ -21,6 +21,7 @@ For safety reasons, you cannot include HTML code into Markdown. By default, HTML
    * *[Horizontal rule](#hrule)*
    * *[Blockquotes](#blockquotes)*
    * *[Links](#links)*
+   * *[Lists](#lists)*
 2. **[Special syntax](#special)**
    * *[Add a CSS class and an #id to an element](#add-class)*
    * *[Table with caption](#tables)*
@@ -219,7 +220,7 @@ Some text to show that the reference links can follow later.
 [1]: https://www.mozilla.org
 [link text itself]: https://www.mozilla.org
 
-### 1.7 Lists{id=lists}
+### 1.7. Lists{id=lists}
 
 (In this example, leading and trailing spaces are shown with with dots: ⋅)
 
