@@ -539,10 +539,16 @@ body {
 }
 
 body, p, blockquote,
-pre, figure, figcaption {
-  margin: 0;
-  padding: 0;
+figure, figcaption {
+    margin: 0;
+    padding: 0;
 }
+
+pre {
+    margin: 0 0 1rem 0;
+    padding: 0;
+}
+
 
 h1,
 h2,
@@ -761,6 +767,9 @@ blockquote {
     font-size: 1.5rem
 }
 
+.large {
+    font-size: 1.7rem
+}
 
 .left {
     float: left

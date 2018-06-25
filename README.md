@@ -49,7 +49,7 @@ A `Procfile` already supplied for you with the command  to execute the app serve
 `web: node ./heroku/serve.js`
 
 The Express server will run on Heroku, but you need improve security!
-(For serving on localhost there is no need for this). For example, you really should set security headers with the `helmet` npm package:
+I already set security headers with the `helmet` npm package:
 
 ````javascript
 // Set Security Headers.
@@ -58,7 +58,7 @@ const helmet = require('helmet')
 app.use(helmet())
 ````
 
-You can also set CSP rules:
+And also defined the Content Security Policy (CSP) rules with the `helmet-csp` package:
 
 ````javascript
 // Content Security Policy.
@@ -67,16 +67,28 @@ const csp = require('helmet-csp')
 // An example, with some exeptions:
 app.use(csp({
   directives: {
-    defaultSrc: [`'self'`],
-    styleSrc: [`'self'`, 'https://fonts.googleapis.com', 'https://www.youtube.com',
-    'https://maxcdn.bootstrapcdn.com'],
-    fontSrc: [`'self'`, 'https://fonts.gstatic.com/'],
-    scriptSrc: [`'self'`, 'https://www.youtube.com','https://www.googletagmanager.com', 'https://www.google-analytics.com',
-    'https://code.jquery.com',
-    'https://maxcdn.bootstrapcdn.com'
+    defaultSrc: [`'self'`, 'https://maxcdn.bootstrapcdn.com'],
+    styleSrc: [`'self'`,
+      'https://fonts.googleapis.com',
+      'https://www.youtube.com',
+      'https://maxcdn.bootstrapcdn.com/'
+    ],
+    fontSrc: [`'self'`,
+      'https://fonts.gstatic.com',
+      'https://maxcdn.bootstrapcdn.com'
+    ],
+    scriptSrc: [`'self'`,
+      'https://www.youtube.com',
+      'https://www.googletagmanager.com',
+      'https://www.google-analytics.com',
+      'https://code.jquery.com',
+      'https://maxcdn.bootstrapcdn.com'
     ],
     childSrc: [`'self'`, 'https://www.youtube.com'],
-    imgSrc: [`'self'`, 'www.google-analytics.com'],
+    imgSrc: [`'self'`,
+      'www.google-analytics.com',
+      'https://use.fontawesome.com'
+    ],
     objectSrc: [`'self'`],
     connectSrc: [`'self'`]
   }

@@ -5,7 +5,7 @@
   "main": "./lib/build.js",
   "scripts": {
     "build": "node ./lib/build.js",
-    "watch": "nodemon --watch ./src ./lib/build.js -e *",
+    "watch": "nodemon --watch ./src --watch site.config.js ./lib/build.js -e *",
     "serve": "node ./lib/serve.js",
     "heroku": "node ./lib/build.js && node ./lib/serve.js"
   },
@@ -34,15 +34,16 @@
     "fs-extra": "^5.0.0",
     "helmet": "^3.12.1",
     "helmet-csp": "^2.7.0",
+    "highlightjs": "^9.10.0",
     "markdown-it": "^8.4.1",
     "markdown-it-attrs": "^2.2.0",
+    "markdown-it-highlightjs": "^3.0.0",
     "markdown-it-implicit-figures": "^0.9.0",
     "markdown-it-multimd-table": "^3.1.2",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "nodemon": "^1.17.5",
-    "serve-favicon": "^2.4.5",
-    "winston": "^3.0.0"
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
     "standard": "^11.0.1"
