@@ -1037,3 +1037,9 @@ a:hover {
 .width-100pc {
     width: 70%
 }
+
+.icon {
+    width: 1.33em;
+    height: 1.33em;
+    vertical-align: -15%;
+}
